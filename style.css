@@ -130,13 +130,12 @@ ul li{
 }
 .error{
     padding: 20px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.info{
-    height: 60px ;
-    width:400px ;
-    border: 1px solid;
-    border-radius: 20px;
-}
+
 .table{
     display: flex;
     justify-content: center;
@@ -164,4 +163,12 @@ td{
     font-weight: 600;
     height: 20px;
     padding: 3px;
+}
+#errmsg {
+    height: 50px;
+    width: 200px;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

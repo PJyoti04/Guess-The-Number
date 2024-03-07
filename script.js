@@ -12,37 +12,60 @@ function taking_inputs() {
 }
 taking_inputs();
 
-function check_inputs() {
-    const num1 = parseInt(document.querySelector(".num1").value, 10);
-    const num2 = parseInt(document.querySelector(".num2").value, 10);
-    const num3 = parseInt(document.querySelector(".num3").value, 10);
-    const num4 = parseInt(document.querySelector(".num4").value, 10);
+function processClasses() {
+    const validateAndConcatenate = (input) => {
+      const digits = input.match(/[0-9]/g);
 
-    if (num1 <= 0 || num1 > 9 || num2 <= 0 || num2 > 9 || num3 <= 0 || num3 > 9 || num4 <= 0 || num4 > 9) {
-        alert("Number must be between 1-9");
-    } else {
-        input_to_number();
+      if (!digits || digits.length !== new Set(digits).size) {
+        throw new Error('Invalid input');
+      }
+
+      return digits.join('');
+    };
+
+    try {
+      const class1 = document.getElementById('class1').value;
+      const class2 = document.getElementById('class2').value;
+      const class3 = document.getElementById('class3').value;
+      const class4 = document.getElementById('class4').value;
+
+      const result1 = validateAndConcatenate(class1);
+      const result2 = validateAndConcatenate(class2);
+      const result3 = validateAndConcatenate(class3);
+      const result4 = validateAndConcatenate(class4);
+
+      return result1 + result2 + result3 + result4;
+    } catch (Error) {
+        const msg = document.getElementById("errmsg");
+        msg.textContent = Error.message;
     }
 }
 
-
-// Converts the input value into number
-function input_to_number() {
-    const num1 = document.querySelector(".num1").value;
-    const num2 = document.querySelector(".num2").value;
-    const num3 = document.querySelector(".num3").value;
-    const num4 = document.querySelector(".num4").value;
-
-    const number = num1 + num2 + num3 + num4;
-    console.log(number);
-}
-
-
-const button = document.querySelector("#btn");
+    const concatenatedString = processClasses();
+    console.log(concatenatedString);
+    const button = document.querySelector("#btn");
 button.addEventListener("click", () => {
-    check_inputs();
+   // check_inputs();
+//    processClasses();
+const concatenatedString = processClasses();
+console.log(concatenatedString);
     same_digit();
 });
+
+
+
+// Converts the input value into number
+// function input_to_number() {
+//     const num1 = document.querySelector(".num1").value;
+//     const num2 = document.querySelector(".num2").value;
+//     const num3 = document.querySelector(".num3").value;
+//     const num4 = document.querySelector(".num4").value;
+
+//     const number = num1 + num2 + num3 + num4;
+//     console.log(number);
+// }
+
+
 
 function same_digit() {
     const num1 = document.querySelector(".num1").value;
@@ -56,3 +79,4 @@ function same_digit() {
         // Your logic for the same digit scenario
     }
 }
+

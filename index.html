@@ -1,3 +1,4 @@
+<!-- Kiron's Branch -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,6 @@
                     at the right place.</li>
                 <li>The present column contain the number of digits that are both in the 
                     unknown number and the guessed number.</li>
-                <li>Made by Jyoti</li>
             </ul>
         </div>
     </div>
@@ -33,14 +33,16 @@
         <div class="guessbox">
             <h2>Guess Here</h2>
             <div class="input">
-                <input class="guess" type="text" inputmode="numeric" maxlength="1" required> 
-                <input class="guess" type="text" inputmode="numeric" maxlength="1" required> 
-                <input class="guess" type="text" inputmode="numeric" maxlength="1" required> 
-                <input class="guess" type="text" inputmode="numeric" maxlength="1" required> 
-            </div>
+                <input id="class1" class="guess num1" type="text" inputmode="numeric" maxlength="1" required> 
+                <input id="class2" class="guess num2" type="text" inputmode="numeric" maxlength="1" required> 
+                <input id="class3" class="guess num3" type="text" inputmode="numeric" maxlength="1" required> 
+                <input id="class4" class="guess num4" type="text" inputmode="numeric" maxlength="1" required> 
+              </div>
+            
             <div class="error">
                 <h3>Tips:</h3>
-                <input class="info" type="text" readonly>
+                <p id="errmsg">This is an error message</p>
+                <!-- <input class="info" type="text" readonly> -->
             </div>
         </div>
         <div class="submit">
@@ -120,5 +122,7 @@
             </table>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

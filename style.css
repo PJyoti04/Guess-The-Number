@@ -4,37 +4,31 @@
     box-sizing: border-box;
     font-family:Arial, Helvetica, sans-serif;
 }
-html,body{
+
+.container {
     height: 100vh;
     width: 100vw;
-}
-body{
-    background-color: #796ab8;
     display: flex;
-    justify-content: center; 
-    align-items:center;
-    gap: 50px;
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+    background: #796ab8;
 }
 .box-rules{
-    height:400px;
+    height:600px;
     width: 450px;
-    background-color: #c1c1c1;
+    background: #c1c1c1;
     border-radius: 40px;
     text-align: center;
     padding: 20px;
 }
 .box-his{
-    height:400px;
+    height:600px;
     width: 450px;
     background-color: #c1c1c1;
     border-radius: 40px;
     text-align: center;
     padding:  30px 20px 20px 20px;
-    
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 .box-mid{
     height: 650px;
@@ -55,13 +49,9 @@ body{
     padding: 10px;
     box-shadow: -3px -3px 7px #16151542,
     3px 3px 10px rgba(0, 0, 0, 0.919) ;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+
 }
-/* h2{
-    display: ;
-} */
+
 .digit{
     padding:20px;
     display: flex;
@@ -88,7 +78,7 @@ body{
     background-color: yellowgreen;
     box-shadow: -3px -3px 7px #16151542,
      3px 3px 10px rgba(0, 0, 0, 0.919) ;
-    /* padding: 50px; */
+   
 }
 ul.bullet{
     list-style: square;
@@ -133,34 +123,6 @@ ul li{
     align-items: center;
 }
 
-.table{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px auto
-    /* background-color: #9c9999db; */
-}
-table{
-    /* border: 2px solid; */
-    /* border-collapse: collapse; */
-    background-color: rgba(246, 245, 245, 0.864);
-    border-radius: 20px;
-    width: 400px;
-}
-th{
-    color: red;
-    font-size: 18px;
-    background-color: rgb(191, 201, 201);
-    height: 30px;
-}
-td{
-    color: blue;
-    background-color: yellowgreen;
-    font-size: 15px;
-    font-weight: 600;
-    height: 20px;
-    padding: 3px;
-}
 #errmsg {
     height: 50px;
     width: 200px;
@@ -168,5 +130,55 @@ td{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* visibility: hidden; */
+   
 }
+#slno {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 30px;
+    background: rgba(255, 192, 203, 0.457);
+    border-radius: 10px;
+    border: solid 2px rgb(174, 92, 105);
+}
+
+#occ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    background: rgba(192, 235, 105, 0.557);
+    border-radius: 10px;
+    border: solid 2px rgb(106, 136, 36);
+}
+
+#pos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    background: rgba(10, 145, 235, 0.308);
+    border-radius: 10px;
+    border: solid 2px rgb(14, 97, 148);
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    font-weight: bold;
+}
+

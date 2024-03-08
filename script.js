@@ -12,6 +12,45 @@ function taking_inputs() {
 }
 taking_inputs();
 
+// function processClasses() {
+//     const validateAndConcatenate = (input) => {
+//       const digits = input.match(/[0-9]/g);
+
+//       if (!digits || digits.length !== new Set(digits).size) {
+//         throw new Error('Invalid input');
+//       }
+
+//       return digits.join('');
+//     };
+
+//     try {
+//       const class1 = document.getElementById('class1').value;
+//       const class2 = document.getElementById('class2').value;
+//       const class3 = document.getElementById('class3').value;
+//       const class4 = document.getElementById('class4').value;
+
+//       const result1 = validateAndConcatenate(class1);
+//       const result2 = validateAndConcatenate(class2);
+//       const result3 = validateAndConcatenate(class3);
+//       const result4 = validateAndConcatenate(class4);
+
+//       const concatenatedString = result1 + result2 + result3 + result4;
+//       console.log(concatenatedString);
+
+//     } catch (Error) {
+//         const msg = document.getElementById("errmsg");
+//         msg.textContent = Error.message;
+//     }
+// }
+
+//     const concatenatedString = processClasses();
+//     console.log(concatenatedString);
+//     const button = document.querySelector("#btn");
+//     button.addEventListener("click", () => {
+//         processClasses();
+//         same_digit();
+// });
+
 function processClasses() {
     const validateAndConcatenate = (input) => {
       const digits = input.match(/[0-9]/g);
@@ -34,36 +73,32 @@ function processClasses() {
       const result3 = validateAndConcatenate(class3);
       const result4 = validateAndConcatenate(class4);
 
-      return result1 + result2 + result3 + result4;
-    } catch (Error) {
+      const concatenatedString = result1 + result2 + result3 + result4;
+      console.log(concatenatedString);
+      return concatenatedString;
+
+    } catch (error) {
         const msg = document.getElementById("errmsg");
-        msg.textContent = Error.message;
+        msg.textContent = error.message;
+        throw error; // Re-throw the error to be caught in the calling code
     }
 }
 
-    const concatenatedString = processClasses();
-    console.log(concatenatedString);
-    const button = document.querySelector("#btn");
+const button = document.querySelector("#btn");
 button.addEventListener("click", () => {
-   // check_inputs();
-//    processClasses();
-const concatenatedString = processClasses();
-console.log(concatenatedString);
-    same_digit();
+    try {
+        const concatenatedString = processClasses();
+        // Perform other actions with concatenatedString if needed
+        same_digit();
+    } catch (error) {
+        // Handle the error here if needed
+        // In this example, the error message is already displayed in the 'errmsg' element
+        console.error(error);
+    }
 });
 
 
 
-// Converts the input value into number
-// function input_to_number() {
-//     const num1 = document.querySelector(".num1").value;
-//     const num2 = document.querySelector(".num2").value;
-//     const num3 = document.querySelector(".num3").value;
-//     const num4 = document.querySelector(".num4").value;
-
-//     const number = num1 + num2 + num3 + num4;
-//     console.log(number);
-// }
 
 
 

@@ -55,6 +55,9 @@ body{
     padding: 10px;
     box-shadow: -3px -3px 7px #16151542,
     3px 3px 10px rgba(0, 0, 0, 0.919) ;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
     /* display: flex;
     justify-content: center;
     align-items: center; */

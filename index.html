@@ -25,23 +25,23 @@
     <div class="box-mid">
         <h2>Guess The Number</h2>
         <div class="digit">
-            <div class="div"><h2>1</h2></div>
-            <div class="div"><h2>2</h2></div>
-            <div class="div"><h2>4</h2></div>
-            <div class="div"><h2>3</h2></div>
-        </div>
+            <div class="div"><h2 id="digit1">1</h2></div>
+            <div class="div"><h2 id="digit2">2</h2></div>
+            <div class="div"><h2 id="digit3">4</h2></div>
+            <div class="div"><h2 id="digit4">3</h2></div>
+          </div>
         <div class="guessbox">
             <h2>Guess Here</h2>
             <div class="input">
-                <input id="class1" class="guess num1" type="text" inputmode="numeric" maxlength="1" required> 
-                <input id="class2" class="guess num2" type="text" inputmode="numeric" maxlength="1" required> 
-                <input id="class3" class="guess num3" type="text" inputmode="numeric" maxlength="1" required> 
-                <input id="class4" class="guess num4" type="text" inputmode="numeric" maxlength="1" required> 
+                <input id="class1" class="guess num1" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
+                <input id="class2" class="guess num2" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
+                <input id="class3" class="guess num3" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
+                <input id="class4" class="guess num4" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
               </div>
             
             <div class="error">
                 <h3>Tips:</h3>
-                <p id="errmsg">This is an error message</p>
+                <p id="errmsg"></p>
                 <!-- <input class="info" type="text" readonly> -->
             </div>
         </div>

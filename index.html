@@ -8,118 +8,109 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="box-rules">
-        <h2>
-            Rules
-        </h2>
-        <div class="rules">
-            <ul class="bullet">
-                <li>The number doesn't have any repetative digit in it.</li>
-                <li>The position column contain the number of digit which are present 
-                    at the right place.</li>
-                <li>The present column contain the number of digits that are both in the 
-                    unknown number and the guessed number.</li>
-            </ul>
+    <div class="container">
+        <div class="box-rules">
+            <h2>
+                Rules
+            </h2>
+            <div class="rules">
+                <ul class="bullet">
+                    <li>The number doesn't have any repetative digit in it.</li>
+                    <li>The position column contain the number of digit which are present 
+                        at the right place.</li>
+                    <li>The present column contain the number of digits that are both in the 
+                        unknown number and the guessed number.</li>
+                </ul>
+            </div>
+            <video width="320" height="180" controls>
+                <source src="https://www.youtube.com/watch?v=l-nDXyVCpTs&list=RDl-nDXyVCpTs&start_radio=1" type="video/mp4">
+            </video>
         </div>
-    </div>
-    <div class="box-mid">
-        <h2>Guess The Number</h2>
-        <div class="digit">
-            <div class="div"><h2>1</h2></div>
-            <div class="div"><h2>2</h2></div>
-            <div class="div"><h2>4</h2></div>
-            <div class="div"><h2>3</h2></div>
-        </div>
-        <div class="guessbox">
-            <h2>Guess Here</h2>
-            <div class="input">
-                <input id="class1" class="guess num1" type="text" inputmode="numeric" maxlength="1" required> 
-                <input id="class2" class="guess num2" type="text" inputmode="numeric" maxlength="1" required> 
-                <input id="class3" class="guess num3" type="text" inputmode="numeric" maxlength="1" required> 
-                <input id="class4" class="guess num4" type="text" inputmode="numeric" maxlength="1" required> 
+        <div class="box-mid">
+            <h2>Guess The Number</h2>
+            <div class="digit">
+                <div class="div"><h2 id="digit1">1</h2></div>
+                <div class="div"><h2 id="digit2">2</h2></div>
+                <div class="div"><h2 id="digit3">4</h2></div>
+                <div class="div"><h2 id="digit4">3</h2></div>
               </div>
-            
-            <div class="error">
-                <h3>Tips:</h3>
-                <p id="errmsg">This is an error message</p>
-                <!-- <input class="info" type="text" readonly> -->
+            <div class="guessbox">
+                <h2>Guess Here</h2>
+                <div class="input">
+                    <input id="class1" class="guess num1" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
+                    <input id="class2" class="guess num2" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
+                    <input id="class3" class="guess num3" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
+                    <input id="class4" class="guess num4" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
+                  </div>
+                
+                <div class="error">
+                    <h3>Tips:</h3>
+                    <p id="errmsg"></p>
+                    <!-- <input class="info" type="text" readonly> -->
+                </div>
+            </div>
+            <div class="submit">
+                <button id="btn"  type="submit"><h3>SUBMIT</h3></button>
             </div>
         </div>
-        <div class="submit">
-            <button id="btn"  type="submit"><h3>SUBMIT</h3></button>
-        </div>
-    </div>
-    <div class="box-his">
-        <h2>History</h2>
-        <div class="table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Sl no.</th>
-                        <th> Guesssed Num</th>
-                        <th>Present</th>
-                        <th>Position</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <td>1</td>
-                        <td>11</td>
-                        <td>11</td>
-                        <td>13</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2</td>
-                        <td>21</td>
-                        <td>22</td>
-                        <td>23</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>31</td>
-                        <td>32</td>
-                        <td>33</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>41</td>
-                        <td>42</td>
-                        <td>43</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>51</td>
-                        <td>52</td>
-                        <td>53</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>61</td>
-                        <td>62</td>
-                        <td>63</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>71</td>
-                        <td>72</td>
-                        <td>73</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>81</td>
-                        <td>82</td>
-                        <td>83</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>91</td>
-                        <td>92</td>
-                        <td>93</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="box-his">
+            <h2>History</h2>
+            <div class="table">
+                <div class="row row-0">
+                    <span id="slno">Sl. No.</span>
+                    <span id="pos">Position</span>
+                    <span id="occ">Occurrence</span>
+                </div>
+                <div class="row row-1">
+                    <span id="slno">01.</span>
+                    <span id="pos">11</span>
+                    <span id="occ">21</span>
+                </div>
+                <div class="row row-2">
+                    <span id="slno">02.</span>
+                    <span id="pos">12</span>
+                    <span id="occ">22</span>
+                </div>
+                <div class="row row-3">
+                    <span id="slno">03.</span>
+                    <span id="pos">13</span>
+                    <span id="occ">23</span>
+                </div>
+                <div class="row row-4">
+                    <span id="slno">04.</span>
+                    <span id="pos">14</span>
+                    <span id="occ">24</span>
+                </div>
+                <div class="row row-5">
+                    <span id="slno">05.</span>
+                    <span id="pos">15</span>
+                    <span id="occ">25</span>
+                </div>
+                <div class="row row-6">
+                    <span id="slno">06.</span>
+                    <span id="pos">16</span>
+                    <span id="occ">26</span>
+                </div>
+                <div class="row row-7">
+                    <span id="slno">07.</span>
+                    <span id="pos">17</span>
+                    <span id="occ">27</span>
+                </div>
+                <div class="row row-8">
+                    <span id="slno">08.</span>
+                    <span id="pos">18</span>
+                    <span id="occ">28</span>
+                </div>
+                <div class="row row-9">
+                    <span id="slno">09.</span>
+                    <span id="pos">19</span>
+                    <span id="occ">29</span>
+                </div>
+                <div class="row row-10">
+                    <span id="slno">10.</span>
+                    <span id="pos">20</span>
+                    <span id="occ">30</span>
+                </div>
         </div>
     </div>
 

@@ -64,17 +64,35 @@ function processClasses() {
   }
 }
 
+
+let no=1;
 const button = document.querySelector("#btn");
 button.addEventListener("click", () => {
   const concatenatedString = processClasses();
+  // document.getElementById("slno").textContent=concatenatedString;
   console.log(concatenatedString);
   
   if(concatenatedString!==undefined){
-    const c=checkNumbers(random4DigitNumber,concatenatedString);
-    checkOccurence(random4DigitNumber,concatenatedString);
-    if(c===1){
+    
+    const c=checkNumbers(random4DigitNumber,concatenatedString,no);
+    no++;
+    // document.getElementById("occ").textContent=checkOccurence(random4DigitNumber,concatenatedString);
+    if(c===true || c>10){
       random4DigitNumber = generateRandomNumber();
       console.log(random4DigitNumber);
+      console.log(no);
+      if(no>11)
+      {
+        no--;
+      }
+      while(no>1)
+      {
+        document.getElementById(`pos${no-1}`).innerText="";
+        document.getElementById(`occ${no-1}`).innerHTML="";
+        document.getElementById(`slno${no-1}`).innerHTML="";
+        no--;
+      }
+      
     }
   }
   // else{
@@ -113,16 +131,18 @@ console.log(random4DigitNumber);
 
 
 
-function checkNumbers(random4DigitNumber,concatenatedString) {
+function checkNumbers(random4DigitNumber,concatenatedString,j) {
 
   if (concatenatedString === random4DigitNumber) {
     
     clearInputFields();
     alert("Congratulations! You've entered the correct number.");
-    return 1;
+    return true;
     
   } else {
-    let counter = 0;
+    if(j<=10)
+    {
+      let counter = 0;
   
     for (let i = 0; i < 4; i++) {
       if (random4DigitNumber[i] == concatenatedString[i]) {
@@ -130,10 +150,21 @@ function checkNumbers(random4DigitNumber,concatenatedString) {
       }
     }
     console.log(counter);
+
+    document.getElementById(`pos${j}`).textContent=counter;
+    document.getElementById(`occ${j}`).textContent=checkOccurence(random4DigitNumber,concatenatedString);
+    document.getElementById(`slno${j}`).textContent=concatenatedString;
     
     clearInputFields();
-    alert("Try again!");
+    alert("Try again!");                    //necessry
     return counter;
+    }
+    else{
+      alert("You Lose");
+      clearInputFields();
+      
+      return j;
+    }
   }
 }
 
@@ -147,7 +178,7 @@ function checkOccurence(random4DigitNumber, concatenatedString){
       }
   }
   console.log("occ="+occuranceCounter);
-  // return occuranceCounter;
+  return occuranceCounter;
 }
 
 function clearInputFields() {
@@ -160,7 +191,7 @@ function clearInputFields() {
 function same_digit(num) {
   
 
-  if (num[1] === num[2] || num[1] === num[3] || num[1] === num[4] || num[2] === num[3]|| num[2] === num[4] || num[3] === num[4]) {
+  if (num[0] === num[1] || num[0] === num[2] || num[0] === num[3] || num[1] === num[2]|| num[1] === num[3] || num[2] === num[3]) {
     // alert("Digits should be unique");
     clearInputFields();
     return 1;

@@ -175,7 +175,7 @@ function checkNumbers(random4DigitNumber,concatenatedString,j) {
     return true;
     
   } else {
-    if(j<=1)
+    if(j<=10)
     {
       let counter = 0;
   

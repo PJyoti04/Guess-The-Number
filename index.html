@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="box-rules">
+        <div class="box-rules popup-rules">
             <h2>
                 Rules
             </h2>
@@ -22,12 +22,16 @@
                         unknown number and the guessed number.</li>
                 </ul>
             </div>
-            <video width="320" height="180" controls>
+            <video width="320" height="" controls>
                 <source src="https://www.youtube.com/watch?v=l-nDXyVCpTs&list=RDl-nDXyVCpTs&start_radio=1" type="video/mp4">
             </video>
         </div>
         <div class="box-mid">
-            <h2>Guess The Number</h2>
+            <h1>Guess The Number</h1>
+            <div class="buttons">
+                <button id="info-btn" class="icon-btn">i</button>
+                <button id="hint-btn" class="hint-btn">Hint</button>
+            </div>
             <div class="digit">
                 <div id="digit1" class="div"><h2></h2></div>
                 <div id="digit2" class="div"><h2></h2></div>
@@ -35,7 +39,7 @@
                 <div id="digit4" class="div"><h2></h2></div>
               </div>
             <div class="guessbox">
-                <h2>Guess Here</h2>
+                <h2>Crack The Code</h2>
                 <div class="input">
                     <input id="class1" class="guess num1" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
                     <input id="class2" class="guess num2" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
@@ -46,14 +50,13 @@
                 <div class="error">
                     <h3>Tips:</h3>
                     <p id="errmsg"></p>
-                    <!-- <input class="info" type="text" readonly> -->
                 </div>
             </div>
             <div class="submit">
                 <button id="btn"  type="submit"><h3>SUBMIT</h3></button>
             </div>
         </div>
-        <div class="box-his">
+        <div class="box-his popup-history">
             <h2>History</h2>
             <div class="table">
                 <div class="row row-0">
@@ -112,6 +115,14 @@
                     <span class="occ" id="occ10"></span>
                 </div>
         </div>
+    </div>
+
+
+    <div class="popup">
+        <h1 class="popup-head"></h1>
+        <p class="ans"></p>
+        <button>PLAY AGAIN</button>
+        <button>CLOSE</button>
     </div>
 
     <script src="script.js"></script>

@@ -1,17 +1,30 @@
 
 // Takes single input and automatically moves to next input label
 function taking_inputs() {
-  const inputs = document.querySelectorAll('input')
+  const inputs = document.querySelectorAll('input');
   inputs.forEach((input, index) => {
+    // Move forward when input is typed
     input.addEventListener('input', (event) => {
       const value = event.target.value;
       if (value.length === 1 && index < inputs.length - 1) {
         inputs[index + 1].focus();
       }
-    })
-  })
+    });
+
+    // Move backward on backspace keypress
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Backspace' && input.value.length === 0 && index > 0) {
+        inputs[index - 1].focus();
+      }
+    });
+  });
 }
+
 taking_inputs();
+
+
+
+
 
 function processClasses() {
   const validateAndConcatenate = (input) => {
@@ -25,7 +38,6 @@ function processClasses() {
     } else {
       return digits.join('');
     }
-    // return digits; //.join('');
   }
 
   try {
@@ -49,12 +61,12 @@ function processClasses() {
         return classValues;
       }
       else{
-        throw new Error("Have duplicate value ");
-        return '';
+        throw new Error("CODE DOESN'T CONTAIN REPEATATING DIGIT");
+        // return '';
       }
     }
     else{
-      throw new Error("enter valid numbers");
+      throw new Error("ENTER VALID DIGITS NO SYMBOLS ARE ALLOWED");
       return '';
     }
     // return classValues;
@@ -65,42 +77,57 @@ function processClasses() {
 }
 
 
-let no=1;
+
+
+
+
+let no = 1;
 const button = document.querySelector("#btn");
-button.addEventListener("click", () => {
+
+// Function to handle the button click or Enter press
+const handleSubmit = () => {
   const concatenatedString = processClasses();
   // document.getElementById("slno").textContent=concatenatedString;
   console.log(concatenatedString);
-  
-  if(concatenatedString!==undefined){
-    
-    const c=checkNumbers(random4DigitNumber,concatenatedString,no);
+
+  if (concatenatedString !== undefined) {
+    const c = checkNumbers(random4DigitNumber, concatenatedString, no);
     no++;
-    // document.getElementById("occ").textContent=checkOccurence(random4DigitNumber,concatenatedString);
-    if(c===true || c>10){
-      random4DigitNumber = generateRandomNumber();
-      console.log(random4DigitNumber);
+
+    // document.getElementById("occ").textContent = checkOccurence(random4DigitNumber, concatenatedString);
+    if (c === true || c > 10) {
+      // random4DigitNumber = generateRandomNumber();
+      // console.log(random4DigitNumber);
       console.log(no);
-      if(no>11)
-      {
+
+      if (no > 11) {
         no--;
       }
-      while(no>1)
-      {
-        document.getElementById(`pos${no-1}`).innerText="";
-        document.getElementById(`occ${no-1}`).innerHTML="";
-        document.getElementById(`slno${no-1}`).innerHTML="";
+
+      while (no > 1) {
+        document.getElementById(`pos${no - 1}`).innerText = "";
+        document.getElementById(`occ${no - 1}`).innerHTML = "";
+        document.getElementById(`slno${no - 1}`).innerHTML = "";
         no--;
       }
-      
     }
   }
-  // else{
+  // else {
   //   const msg = document.getElementById("errmsg");
-  //   msg.textContent ='enter again';
+  //   msg.textContent = 'enter again';
   // }
-  
+};
+
+// Add event listener for button click
+button.addEventListener("click", handleSubmit);
+
+// Add event listener for Enter key press
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    handleSubmit();
+  }
 });
+
 
 function generateRandomNumber() {
   let uniqueDigits = Array.from({ length: 10 }, (_, i) => i.toString()); // Array with digits 0 to 9
@@ -136,11 +163,19 @@ function checkNumbers(random4DigitNumber,concatenatedString,j) {
   if (concatenatedString === random4DigitNumber) {
     
     clearInputFields();
-    alert("Congratulations! You've entered the correct number.");
+    // alert("Congratulations! You've entered the correct number.");
+    document.querySelector(".popup").style.display="flex"
+    document.querySelector(".popup-head").innerHTML="Congratulations"
+    document.querySelector(".ans").innerHTML=`${random4DigitNumber}`
+    document.querySelector(".guessbox").style.visibility="hidden"
+    document.getElementById("digit1").style.visibility="visible";
+    document.getElementById("digit2").style.visibility="visible";
+    document.getElementById("digit3").style.visibility="visible";
+    document.getElementById("digit4").style.visibility="visible";
     return true;
     
   } else {
-    if(j<=10)
+    if(j<=1)
     {
       let counter = 0;
   
@@ -160,7 +195,11 @@ function checkNumbers(random4DigitNumber,concatenatedString,j) {
     return counter;
     }
     else{
-      alert("You Lose");
+      // alert("You Lose");
+      document.querySelector(".popup").style.display="flex"
+      document.querySelector(".popup-head").innerHTML="You Lose"
+      document.querySelector(".ans").innerHTML=`${random4DigitNumber}`
+      document.querySelector(".guessbox").style.visibility="hidden"
       clearInputFields();
       
       return j;
@@ -199,3 +238,43 @@ function same_digit(num) {
     return 0;  // Your logic for the same digit scenario
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const infoBtn = document.getElementById("info-btn");
+  const hintBtn = document.getElementById("hint-btn");
+  const popupOverlay = document.createElement('div');
+  popupOverlay.classList.add('popup-overlay');
+  document.body.appendChild(popupOverlay);
+
+  // Show Rules popup
+  infoBtn.addEventListener("click", () => {
+      const rulesPopup = document.querySelector(".box-rules");
+      rulesPopup.classList.add("show-popup");
+      popupOverlay.classList.add("show-popup");
+  });
+
+  // Show History popup
+  hintBtn.addEventListener("click", () => {
+      const historyPopup = document.querySelector(".box-his");
+      historyPopup.classList.add("show-popup");
+      popupOverlay.classList.add("show-popup");
+  });
+
+  // Close popup when clicking outside
+  popupOverlay.addEventListener("click", () => {
+      document.querySelectorAll('.popup-rules, .popup-history').forEach(popup => {
+          popup.classList.remove("show-popup");
+      });
+      popupOverlay.classList.remove("show-popup");
+  });
+});

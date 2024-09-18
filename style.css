@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: fantasy;
+    /* background-image:linear-gradient(45deg,rgba(15, 167, 137, 0.718),white) ; */
 }
 
 .container {
@@ -38,7 +39,8 @@
     /* width: 500px; */
     width: 95%;
     border-radius: 40px;
-    background-color: #c1c1c1;
+    background-color: #3430a7b5;
+    /* z-index:1; */
     padding: 30px;
     text-align: center;
     box-shadow:inset -3px -3px 7px #16151542,
@@ -47,13 +49,31 @@
     flex-direction: column;
     align-items: center;
 }
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.nav button{
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f27d65;
+    border: 1px solid #130d0d;
+    border-radius: 5px;
+    color: white;
+    letter-spacing: 1px;
+}
 
-.box-mid h1{
+.nav h1{
+    text-align: center;
     letter-spacing: 3px;
     font-size: 5vw;
-    color: white;
+    color: rgb(37, 37, 230);
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: black;
+    /* order:-1; */
 }
 .div{
     height: 50px;
@@ -67,9 +87,6 @@
     font-weight: 700;
     box-shadow: -3px -3px 7px #16151542,
     3px 3px 10px rgba(0, 0, 0, 0.919) ;
-    /* visibility:hidden; */
-    /* outline:none; */
-
 }
 
 .digit{
@@ -88,10 +105,14 @@
     margin-top: 50px;
     text-align: center;
     padding-top: 40px;
+    border-radius: 20px;
 }
 
 .guessbox h2{
     letter-spacing: 3px;
+    color: white;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
 }
 .submit{
     padding: 50px;
@@ -380,5 +401,17 @@ font-family: monospace;
         width: 40vw;
         height: 10vw;
         font-size: 5vw;
+    }
+
+    .nav{
+        flex-wrap: wrap;
+    }
+
+    .nav h1{
+        order: -1;
+        font-size: 10vw;
+        margin-bottom: 2vw;
+        margin-left: 1.5vw;
+        /* text-align: center; */
     }
 }

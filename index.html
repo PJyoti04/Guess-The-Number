@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="nav">
+        <button class="back" onclick="window.location.href='home.html'">Back</button>
+        <h1>Guess The Number</h1>
+        <div class="nav-div">
+            <button class="giveup">Give Up</button>
+            <button id="info-btn" class="icon-btn">?</button>
+        </div>
+    </nav>
+
+
     <div class="container">
         <div class="box-rules popup-rules">
             <h2>
@@ -27,9 +37,8 @@
             </video>
         </div>
         <div class="box-mid">
-            <h1>Guess The Number</h1>
+            <!-- <h1>Guess The Number</h1> -->
             <div class="buttons">
-                <button id="info-btn" class="icon-btn">i</button>
                 <button id="hint-btn" class="hint-btn">Hint</button>
             </div>
             <div class="digit">

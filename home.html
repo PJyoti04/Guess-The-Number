@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Loader Section -->
+    <div id="loader-container" class="loader-container">
+        <div class="loader"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Home Section -->
+    <div class="home" id="home-container">
+        <h1>Guess The Number</h1>
+        <button class="index" onclick="window.location.href='index.html'">TAP TO PLAY</button>
+        <button class="htp">HOW TO PLAY</button>
+        <button class="mode">MODES</button>
+    </div>
+
+    <script>
+        // Hide loader after 4 seconds and show the home div with animation
+        setTimeout(function() {
+            // Hide the loader
+            document.getElementById('loader-container').style.display = 'none';
+
+            // Add class to trigger the slide-up animation for the home div
+            document.getElementById('home-container').classList.add('slide-up');
+        }, 3000);
+    </script>
+</body>
+</html>

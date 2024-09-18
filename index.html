@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,132 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="nav">
-        <button class="back" onclick="window.location.href='home.html'">Back</button>
+    <!-- Loader Section -->
+    <div id="loader-container" class="loader-container">
+        <div class="loader"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Home Section -->
+    <div class="home" id="home-container">
         <h1>Guess The Number</h1>
-        <div class="nav-div">
-            <button class="giveup">Give Up</button>
-            <button id="info-btn" class="icon-btn">?</button>
-        </div>
-    </nav>
-
-
-    <div class="container">
-        <div class="box-rules popup-rules">
-            <h2>
-                Rules
-            </h2>
-            <div class="rules">
-                <ul class="bullet">
-                    <li>The number doesn't have any repetative digit in it.</li>
-                    <li>The position column contain the number of digit which are present 
-                        at the right place.</li>
-                    <li>The present column contain the number of digits that are both in the 
-                        unknown number and the guessed number.</li>
-                </ul>
-            </div>
-            <video width="320" height="" controls>
-                <source src="https://www.youtube.com/watch?v=l-nDXyVCpTs&list=RDl-nDXyVCpTs&start_radio=1" type="video/mp4">
-            </video>
-        </div>
-        <div class="box-mid">
-            <!-- <h1>Guess The Number</h1> -->
-            <div class="buttons">
-                <button id="hint-btn" class="hint-btn">Hint</button>
-            </div>
-            <div class="digit">
-                <div id="digit1" class="div"><h2></h2></div>
-                <div id="digit2" class="div"><h2></h2></div>
-                <div id="digit3" class="div"><h2></h2></div>
-                <div id="digit4" class="div"><h2></h2></div>
-              </div>
-            <div class="guessbox">
-                <h2>Crack The Code</h2>
-                <div class="input">
-                    <input id="class1" class="guess num1" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
-                    <input id="class2" class="guess num2" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
-                    <input id="class3" class="guess num3" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
-                    <input id="class4" class="guess num4" type="text" inputmode="numeric" maxlength="1" required autocomplete="off"> 
-                  </div>
-                
-                <div class="error">
-                    <h3>Tips:</h3>
-                    <p id="errmsg"></p>
-                </div>
-            </div>
-            <div class="submit">
-                <button id="btn"  type="submit"><h3>SUBMIT</h3></button>
-            </div>
-        </div>
-        <div class="box-his popup-history">
-            <h2>History</h2>
-            <div class="table">
-                <div class="row row-0">
-                    <span class="slno" id="slno0">Guessed</span>
-                    <span class ="pos" id="pos0">Position</span>
-                    <span class="occ" id="occ0">Presence</span>
-                </div>
-                <div class="row row-1">
-                    <span  class="slno" id="slno1"></span>
-                    <span class ="pos" id="pos1"></span>
-                    <span  class="occ" id="occ1"></span>
-                </div>
-                <div class="row row-2">
-                    <span  class="slno" id="slno2"></span>
-                    <span class ="pos" id="pos2"></span>
-                    <span class ="occ"  id="occ2"></span>
-                </div>
-                <div class="row row-3">
-                    <span  class="slno" id="slno3"></span>
-                    <span class ="pos"  id="pos3"></span>
-                    <span class ="occ"  id="occ3"></span>
-                </div>
-                <div class="row row-4">
-                    <span class="slno"  id="slno4"></span>
-                    <span class ="pos"  id="pos4"></span>
-                    <span  class="occ" id="occ4"></span>
-                </div>
-                <div class="row row-5">
-                    <span class="slno"  id="slno5"></span>
-                    <span  class ="pos" id="pos5"></span>
-                    <span  class="occ" id="occ5"></span>
-                </div>
-                <div class="row row-6">
-                    <span  class="slno" id="slno6"></span>
-                    <span class ="pos"  id="pos6"></span>
-                    <span  class="occ"id="occ6"></span>
-                </div>
-                <div class="row row-7">
-                    <span  class="slno" id="slno7"></span>
-                    <span  class ="pos" id="pos7"></span>
-                    <span class="occ" id="occ7"></span>
-                </div>
-                <div class="row row-8">
-                    <span  class="slno" id="slno8"></span>
-                    <span  class ="pos" id="pos8"></span>
-                    <span class="occ" id="occ8"></span>
-                </div>
-                <div class="row row-9">
-                    <span class="slno"  id="slno9"></span>
-                    <span  class ="pos" id="pos9"></span>
-                    <span  class="occ" id="occ9"></span>
-                </div>
-                <div class="row row-10">
-                    <span  class="slno" id="slno10"></span>
-                    <span  class ="pos" id="pos10"></span>
-                    <span class="occ" id="occ10"></span>
-                </div>
-        </div>
+        <button class="index" onclick="window.location.href='home.html'">TAP TO PLAY</button>
+        <button class="htp">HOW TO PLAY</button>
+        <button class="mode">MODES</button>
     </div>
 
+    <script>
+        // Hide loader after 4 seconds and show the home div with animation
+        setTimeout(function() {
+            // Hide the loader
+            document.getElementById('loader-container').style.display = 'none';
 
-    <div class="popup">
-        <h1 class="popup-head"></h1>
-        <p class="ans"></p>
-        <button>PLAY AGAIN</button>
-        <button>CLOSE</button>
-    </div>
-
-    <script src="script.js"></script>
+            // Add class to trigger the slide-up animation for the home div
+            document.getElementById('home-container').classList.add('slide-up');
+        }, 3000);
+    </script>
 </body>
 </html>

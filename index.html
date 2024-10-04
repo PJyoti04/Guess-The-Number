@@ -7,11 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Loader Section -->
-    <div id="loader-container" class="loader-container">
-        <div class="loader"></div>
-        <p>Loading...</p>
-    </div>
+    <dotlottie-player id="loader-container" src="https://lottie.host/cacc5112-7340-4207-9657-ead5024d11e8/1aVZ5lbiK6.json" background="transparent" speed="1.1" style="width: 50%; height: 300px" direction="1" playMode="normal" loop autoplay></dotlottie-player>
 
     <!-- Home Section -->
     <div class="home" id="home-container">
@@ -29,7 +25,8 @@
 
             // Add class to trigger the slide-up animation for the home div
             document.getElementById('home-container').classList.add('slide-up');
-        }, 3000);
+        },3000);
     </script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 </html>

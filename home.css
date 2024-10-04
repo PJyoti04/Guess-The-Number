@@ -31,7 +31,8 @@ body{
 .box-his{
     height:600px;
     width: 450px;
-    background-color: #c1c1c1;
+    /* background-color: #c1c1c1; */
+    /* background: #000; */
     border-radius: 40px;
     text-align: center;
     padding:  30px 20px 20px 20px;
@@ -189,8 +190,7 @@ ul li{
     color: rgb(224, 12, 12);
     font-weight: 600;
     font-size: 15px;
-font-family: monospace;    
-   
+    font-family: monospace;
 }
 .slno {
     display: flex;
@@ -297,7 +297,8 @@ font-family: monospace;
     z-index: 1000;
     width: 95%;
     max-width: 600px;
-    background: white;
+    /* background: white; */
+    background: #eae8e8;
     border: 2px solid black;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
